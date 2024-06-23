@@ -10,7 +10,7 @@ void	ft_menu()
 	std::cout << "#########################################################" << std::endl;
 	std::cout << "#                                                       #" << std::endl;
 
-	std::cout << "#" <<  "        " << "\u260E\uFE0F  " << "Welcome to the amazing phonebook!" << "\u260E\uFE0F" << "          " << "#" << std::endl;
+	std::cout << "#" <<  "         " << "\u260E\uFE0F " << "Welcome to the amazing phonebook!" << "\u260E\uFE0F" << "          " << "#" << std::endl;
 	
 	std::cout << "#                                                       #" << std::endl;
 	std::cout << "#      Please enter one of the following commands:      #" << std::endl;
