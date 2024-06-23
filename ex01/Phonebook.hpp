@@ -15,12 +15,13 @@ public:
 	Phonebook();
 	~Phonebook();
 
-	int get_nb_contacts();
+	int		get_nb_contacts();
+	int		search_contact();
+	int		add_contact();
+	void	print_contact();
+	void	print_info(int index);
+	
 	std::string truncate(std::string str);
-	void add_contact();
-	void search_contact();
-	void print_contact();
-	void print_info(int index);
 };
 
 #endif

@@ -8,13 +8,14 @@ Phonebook::~Phonebook()
 {
 }
 
-void Phonebook::add_contact()
+int Phonebook::add_contact()
 {
 	int nb_contact = get_nb_contacts();
 	int i = 0;
 	Contact new_contact;
 
-	new_contact.create_contact();
+	if (new_contact.create_contact() == 1)
+		return (1);
 	if (nb_contact >= 8)
 	{
 		while (i < 7)
@@ -23,9 +24,10 @@ void Phonebook::add_contact()
 			i++;
 		}
 		contacts[7] = new_contact;
-		return ;
+		return (0);
 	}
 	contacts[nb_contact] = new_contact;
+	return (0);
 }
 
 int Phonebook::get_nb_contacts()
@@ -89,7 +91,7 @@ void Phonebook::print_contact()
 	}
 }
 
-void Phonebook::search_contact()
+int Phonebook::search_contact()
 {
 	std::string input;
 	int nb_contact = get_nb_contacts();
@@ -97,13 +99,15 @@ void Phonebook::search_contact()
 	if (nb_contact == 0)
 	{
 		std::cout << "\e[1;91m" << "No contacts in the phonebook!" << "\U0001F62D" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 
 	print_contact();
 
 	std::cout << "\e[1;36m" << "Enter the index: " << "\e[0m" << std::endl;
 	std::getline(std::cin, input);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 
 	if (input == "1")
 		print_info(0);
@@ -123,4 +127,5 @@ void Phonebook::search_contact()
 		print_info(7);
 	else
 		std::cout << "\e[1;91m" << "Invalid index!" << "\U0001F621" << "\e[1;35m" << std::endl;
+	return (0);
 }

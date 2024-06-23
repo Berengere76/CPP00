@@ -40,9 +40,21 @@ int main()
 			break ;
 		}
 		if (command == "ADD")
-			phoneBook.add_contact();
-		else if (command == "SEARCH")
-			phoneBook.search_contact();
+		{
+			if (phoneBook.add_contact() == 1)
+			{
+				std::cout << "\e[1;36m" << "Goodbye, see you soon!" << "\U0001F600" << "\e[0m" << std::endl;
+				break ;
+			}
+		}
+		else if ((command == "SEARCH"))
+		{
+			if (phoneBook.search_contact() == 1)
+			{
+				std::cout << "\e[1;36m" << "Goodbye, see you soon!" << "\U0001F600" << "\e[0m" << std::endl;
+				break ;
+			}
+		}
 		else if (command == "EXIT")
 		{
 			std::cout << "\e[1;36m" << "Goodbye, see you soon!" << "\U0001F600" << "\e[0m" << std::endl;

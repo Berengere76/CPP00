@@ -62,7 +62,7 @@ void Contact::set_darkest_secret(std::string darkestSecret)
 	this->darkestSecret = darkestSecret;
 }
 
-void Contact::create_contact()
+int Contact::create_contact()
 {
 	std::string firstName;
 	std::string lastName;
@@ -75,22 +75,24 @@ void Contact::create_contact()
 	/* CREATE FIRST NAME */
 	std::cout << "\e[1;35m" << "Enter first name: " << "\e[0m" << std::endl;
 	std::getline(std::cin, firstName);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 	if (firstName.empty())
 	{
 		std::cout << "\e[1;91m" << "First name cannot be empty!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	if (firstName.length() > 50)
 	{
 		std::cout << "\e[1;91m" << "First name is too long!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	while (firstName[i])
 	{
 		if (!isalpha(firstName[i]) && !isdigit(firstName[i]))
 		{
 			std::cout << "\e[1;91m" << "Invalid first name!" << "\U0001F621" << "\e[0m" << std::endl;
-			return ;
+			return (0);
 		}
 		i++;
 	}
@@ -98,15 +100,17 @@ void Contact::create_contact()
 	/* CREATE LAST NAME */
 	std::cout << "\e[1;35m" << "Enter last name: " << "\e[0m" << std::endl;
 	std::getline(std::cin, lastName);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 	if (lastName.empty())
 	{
 		std::cout << "\e[1;91m" << "Last name cannot be empty!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	if (lastName.length() > 50)
 	{
 		std::cout << "\e[1;91m" << "Last name is too long!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	i = 0;
 	while (lastName[i])
@@ -114,7 +118,7 @@ void Contact::create_contact()
 		if (!isalpha(lastName[i]) && !isdigit(lastName[i]))
 		{
 			std::cout << "\e[1;91m" << "Invalid last name!" << "\U0001F621" << "\e[0m" << std::endl;
-			return ;
+			return (0);
 		}
 		i++;
 	}
@@ -122,15 +126,17 @@ void Contact::create_contact()
 	/* CREATE NICKNAME */
 	std::cout << "\e[1;35m" << "Enter nickname: " << "\e[0m" << std::endl;
 	std::getline(std::cin, nickName);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 	if (nickName.empty())
 	{
 		std::cout << "\e[1;91m" << "Nickname cannot be empty!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	if (nickName.length() > 50)
 	{
 		std::cout << "\e[1;91m" << "Nickname is too long!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	i = 0;
 	while (nickName[i])
@@ -138,7 +144,7 @@ void Contact::create_contact()
 		if (!isalpha(nickName[i]) && !isdigit(nickName[i]))
 		{
 			std::cout << "\e[1;91m" << "Invalid nickname!" << "\U0001F621" << "\e[0m" << std::endl;
-			return ;
+			return (0);
 		}
 		i++;
 	}
@@ -146,32 +152,36 @@ void Contact::create_contact()
 	/* CREATE PHONE NUMBER */
 	std::cout << "\e[1;35m" << "Enter phone number: " << "\e[0m" << std::endl;
 	std::getline(std::cin, phoneNumber);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 	if (isalpha(phoneNumber[0]) || phoneNumber.length() != 10)
 	{
 		std::cout << "\e[1;91m" << "Invalid phone number!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 
 	/* CREATE DARKEST SECRET */
 	std::cout << "\e[1;35m" << "Enter darkest secret: " << "\e[0m" << std::endl;
 	std::getline(std::cin, darkestSecret);
+	if (std::cin.eof() || std::cin.bad() || std::cin.fail())
+		return (1);
 	if (darkestSecret.empty())
 	{
 		std::cout << "\e[1;91m" << "Darkest secret cannot be empty!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	if (darkestSecret.length() > 50)
 	{
 		std::cout << "\e[1;91m" << "Darkest secret is too long!" << "\U0001F621" << "\e[0m" << std::endl;
-		return ;
+		return (0);
 	}
 	i = 0;
 	while (darkestSecret[i])
 	{
-		if (!isalpha(darkestSecret[i]) && !isdigit(darkestSecret[i]))
+		if (!isalpha(darkestSecret[i]) && !isdigit(darkestSecret[i]) && !isspace(darkestSecret[i]))
 		{
 			std::cout << "\e[1;91m" << "Invalid darkest secret!" << "\U0001F621" << "\e[0m" << std::endl;
-			return ;
+			return (0);
 		}
 		i++;
 	}
@@ -183,4 +193,5 @@ void Contact::create_contact()
 	set_darkest_secret(darkestSecret);
 
 	std::cout << "\e[1;32m" << "Contact added to the phonebook!" << "\U0001F44D" << "\e[0m" << std::endl;
+	return (0);
 }

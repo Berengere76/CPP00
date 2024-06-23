@@ -33,7 +33,7 @@ public:
 	void set_phone_number(std::string phoneNumber);
 	void set_darkest_secret(std::string darkestSecret);
 
-	void create_contact();
+	int create_contact();
 };
 
 #endif
