@@ -7,14 +7,14 @@
 void	ft_menu()
 {
 	std::cout << "\e[1;36m";
-	std::cout << std::setw(57) << "#########################################################" << std::endl;
-	std::cout << std::setw(57) << "#                                                       #" << std::endl;
+	std::cout << "#########################################################" << std::endl;
+	std::cout << "#                                                       #" << std::endl;
 
-	std::cout << std::setw(57) << "#         \u260E\uFE0F Welcome to the amazing phonebook! \u260E\uFE0F         #" << std::endl;
+	std::cout << "#         \u260E\uFE0F  Welcome to the amazing phonebook! \u260E\uFE0F        #" << std::endl;
 	
-	std::cout  << std::setw(57) << "#                                                       #" << std::endl;
-	std::cout  << std::setw(57) << "#      Please enter one of the following commands:      #" << std::endl;
-	std::cout  << std::setw(57) << "#                                                       #" << std::endl;
+	std::cout << "#                                                       #" << std::endl;
+	std::cout << "#      Please enter one of the following commands:      #" << std::endl;
+	std::cout << "#                                                       #" << std::endl;
 
 	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      2 - ADD                          " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
 	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      2 - SEARCH                       " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
