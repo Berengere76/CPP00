@@ -16,9 +16,9 @@ void	ft_menu()
 	std::cout << "#      Please enter one of the following commands:      #" << std::endl;
 	std::cout << "#                                                       #" << std::endl;
 
-	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      2 - ADD                          " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
+	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      1 - ADD                          " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
 	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      2 - SEARCH                       " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
-	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      2 - EXIT                         " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
+	std::cout << "#" << "\e[0m" << "\e[1;33m" << "                      3 - EXIT                         " << "\e[0m" << "\e[1;36m" << "#" << std::endl;
 
 	std::cout << "#                                                       #" << std::endl;
 	std::cout << "#########################################################" << std::endl;
